@@ -1,0 +1,21 @@
+  
+/* These styles override home.css*/
+.allgood {
+    /* Empty */
+}
+.problem {
+    /* Empty */
+}
+.allgood:before{
+    font-family: 'cakefont';
+    font-size: 18px;
+    margin-right: .5em;
+    color: #88c671;     /* Green */
+    content: "\0056";     /* Baker's Hat */
+}
+.problem:before{
+    font-family: 'cakefont';
+    font-size: 18px;
+    color: #d33d44;     /* Red */
+    content: "\0057";     /* leaning Baker's Hat with X*/
+}

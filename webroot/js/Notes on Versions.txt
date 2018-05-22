@@ -1,0 +1,41 @@
+With bootstrap 4 you need specific versions of jquery and popper.
+Otherwise popper will not work....
+
+
+17 - April - 2018  (brendan)
+Note from stackoverflow.....
+https://stackoverflow.com/questions/47039812/how-to-install-popper-js-with-bootstrap-4
+--------------------------------------------------------------------
+Bootstrap 4 has two dependencies: jQuery 1.9.1 and popper.js 1.12.3. 
+When you install Bootstrap 4, you need to install these two dependencies.
+
+to install popper.js:       npm install popper.js@^1.12.3 --save
+to install jQuery:          npm install jquery@1.9.1 --save
+to install Bootstrap:       npm install bootstrap@4.0.0-beta.2 --save
+---------------------------------------------------------------------
+
+I already had a later non beta version of bootstrap installed  - so I did not use the last npm
+Bootstrap v4.0.0 (https://getbootstrap.com) for bootstrap.js
+Bootstrap v4.1.0 (https://getbootstrap.com) for bootstrap.css
+
+The npm commands above install the relevant files at:
+C:\Users\Brendan\node_modules\popper.js
+C:\Users\Brendan\node_modules\jquery
+C:\Users\Brendan\node_modules\boostrap
+
+I copied the disttribution versions of popper.js and jquery.js from above directories to
+C:\cake\transperth\webroot\js
+
+This worked fine and collapsable navbars worked correctly ( which need the right versions of jquery and popper)
+Note that jquery-3.3.1.js - located in this directory is not used at the moment.
+---------------------------------------------------------------------
+These commands are found in C:\cake\transperth\src\Template\Layout\default.ctp
+ <!-- load the required style and script files -->
+ 
+<?= $this->Html->css('bootstrap.css') ?>          <!-- boostrap classes -->
+    
+<?= $this->Html->script('jquery.js') ?>           <!-- jquery as used by bootstrap -->
+    
+<?= $this->Html->script('popper.js') ?>          <!-- popper is needed by bootstrap -->
+    
+<?= $this->Html->script('bootstrap.js') ?>        <!-- boostrap javascript -->
