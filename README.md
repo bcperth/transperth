@@ -1,51 +1,47 @@
-# CakePHP Application Skeleton
+# CakePHP Application
+This is a cakePHP application purely for totorial purposes.
+You cant run the application without a mySQL database set up as per the needs of the application.
+Also of course needs PHP to be installed with a range of extensions for cakePHP.
 
-[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
-[![License](https://img.shields.io/packagist/l/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
+The transperth application has teh following features:
+login,
+Register new user ( with role user) - but knows about admin.
+logout,
+Authorisation is set up to allow selective access for
+  not logged in
+  user
+  admin
+The main menu changes according to the user role as above - this is done using a cell.
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 3.x.
+The transperth application will enable users to plan bus/train trips in Perth/Australia
+(the official application already exists - and transperth is a registered trademark)
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+There is a screen for users to enter departure and destination addresses.
+This screen accesses the google api and looks up the lat, long coordinates for the locations
+The time of day is also entered if different from now.
 
-## Installation
+Alternatively, the user can bring up a map and click on departure and destination locations.
+The lat, long coordinates for the locations can then be read via the api.
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+Then we apply an algorithm to look up the transperth stops, routes, timetables ( in mySQL)
+and find a suitable bus ( stage one does not cater for transfers).
 
-If Composer is installed globally, run
+This is a work in progress ... 
 
-```bash
-composer create-project --prefer-dist cakephp/app
-```
+One of the aims is to use as many of the cakePHP features as possible ... like..
 
-In case you want to use a custom app dir name (e.g. `/myapp/`):
+view templates
+view layouts
+view elements
+view blocks
+view cells
+html helper
+http helper
+url helper
+Controllers
+Models and Entities
+Views
+Middleware
+Authorisation component 
 
-```bash
-composer create-project --prefer-dist cakephp/app myapp
-```
-
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
-
-```bash
-bin/cake server -p 8765
-```
-
-Then visit `http://localhost:8765` to see the welcome page.
-
-## Update
-
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
-
-## Configuration
-
-Read and edit `config/app.php` and setup the `'Datasources'` and any other
-configuration relevant for your application.
-
-## Layout
-
-The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) (v5) CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
+Brendan Curtin
